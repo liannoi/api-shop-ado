@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A28969A1-ADFB-4468-9BEB-0F26D6F659BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "system", "system", "{501A351C-F2CE-455E-9F0F-615E377BDB27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{A9E9FB91-D61F-404D-85A5-463EEFC87A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAdo.WebAPI", "src\api\ShopAdo.WebAPI.csproj", "{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAdo.System.Infrastructure", "src\system\infrastructure\ShopAdo.System.Infrastructure.csproj", "{82AF1836-1CE2-478E-B0B6-D5FC5058058A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAdo.System.Core.Application", "src\system\core\application\ShopAdo.System.Core.Application.csproj", "{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAdo.System.Core.Domain", "src\system\core\domain\ShopAdo.System.Core.Domain.csproj", "{3D2B6C7A-D365-454A-943D-1115492790C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{501A351C-F2CE-455E-9F0F-615E377BDB27} = {A28969A1-ADFB-4468-9BEB-0F26D6F659BC}
+		{A9E9FB91-D61F-404D-85A5-463EEFC87A37} = {501A351C-F2CE-455E-9F0F-615E377BDB27}
+		{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB} = {A28969A1-ADFB-4468-9BEB-0F26D6F659BC}
+		{82AF1836-1CE2-478E-B0B6-D5FC5058058A} = {501A351C-F2CE-455E-9F0F-615E377BDB27}
+		{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3} = {A9E9FB91-D61F-404D-85A5-463EEFC87A37}
+		{3D2B6C7A-D365-454A-943D-1115492790C3} = {A9E9FB91-D61F-404D-85A5-463EEFC87A37}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E605B63-3EDF-4EA3-BDF3-8443E8BFBFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82AF1836-1CE2-478E-B0B6-D5FC5058058A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82AF1836-1CE2-478E-B0B6-D5FC5058058A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82AF1836-1CE2-478E-B0B6-D5FC5058058A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82AF1836-1CE2-478E-B0B6-D5FC5058058A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F2308DA-7D30-49AE-9B72-9D2CF0EC2AD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2B6C7A-D365-454A-943D-1115492790C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2B6C7A-D365-454A-943D-1115492790C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2B6C7A-D365-454A-943D-1115492790C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2B6C7A-D365-454A-943D-1115492790C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
