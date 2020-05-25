@@ -28,7 +28,7 @@ namespace ShopAdo.System.Core.Application.Storage.Categories.Commands.Update
                 CancellationToken cancellationToken)
             {
                 var fined = await _context.Category
-                    .Where(e => e.CategoryId == request.CategoryId)
+                    .Where(category => category.CategoryId == request.CategoryId)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 fined.CategoryName = request.CategoryName;

@@ -12,8 +12,8 @@ namespace ShopAdo.System.Core.Application.Storage.Manufacturers.Commands.Create
         public int ManufacturerId { get; set; }
         public string ManufacturerName { get; set; }
 
-        public class
-            CreateManufacturerCommandHandler : IRequestHandler<CreateManufacturerCommand, ManufacturerLookupDto>
+        public class CreateManufacturerCommandHandler :
+            IRequestHandler<CreateManufacturerCommand, ManufacturerLookupDto>
         {
             private readonly IShopAdoContext _context;
             private readonly IMapper _mapper;

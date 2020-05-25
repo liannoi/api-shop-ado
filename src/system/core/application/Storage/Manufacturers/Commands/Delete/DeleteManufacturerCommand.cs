@@ -12,8 +12,8 @@ namespace ShopAdo.System.Core.Application.Storage.Manufacturers.Commands.Delete
     {
         public int ManufacturerId { get; set; }
 
-        public class
-            DeleteManufacturerCommandHandler : IRequestHandler<DeleteManufacturerCommand, ManufacturerLookupDto>
+        public class DeleteManufacturerCommandHandler :
+            IRequestHandler<DeleteManufacturerCommand, ManufacturerLookupDto>
         {
             private readonly IShopAdoContext _context;
             private readonly IMapper _mapper;
@@ -28,7 +28,7 @@ namespace ShopAdo.System.Core.Application.Storage.Manufacturers.Commands.Delete
                 CancellationToken cancellationToken)
             {
                 var fined = await _context.Manufacturer
-                    .Where(e => e.ManufacturerId == request.ManufacturerId)
+                    .Where(manufacturer => manufacturer.ManufacturerId == request.ManufacturerId)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 _context.Manufacturer.Remove(fined);

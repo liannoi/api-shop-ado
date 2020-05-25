@@ -33,19 +33,18 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Update
             public async Task<GoodLookupDto> Handle(UpdateGoodCommand request, CancellationToken cancellationToken)
             {
                 var fined = await _context.Good
-                    .Where(e => e.GoodId == request.GoodId)
+                    .Where(good => good.GoodId == request.GoodId)
                     .FirstOrDefaultAsync(cancellationToken);
 
-                fined.GoodName = request.GoodName;
-
                 fined.Manufacturer = await _context.Manufacturer
-                    .Where(e => e.ManufacturerId == request.Manufacturer.ManufacturerId)
+                    .Where(manufacturer => manufacturer.ManufacturerId == request.Manufacturer.ManufacturerId)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 fined.Category = await _context.Category
-                    .Where(e => e.CategoryId == request.Category.CategoryId)
+                    .Where(category => category.CategoryId == request.Category.CategoryId)
                     .FirstOrDefaultAsync(cancellationToken);
 
+                fined.GoodName = request.GoodName;
                 fined.Price = request.Price;
                 fined.GoodCount = request.GoodCount;
                 await _context.SaveChangesAsync(cancellationToken);

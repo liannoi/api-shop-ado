@@ -26,7 +26,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Delete
             public async Task<GoodLookupDto> Handle(DeleteGoodCommand request, CancellationToken cancellationToken)
             {
                 var fined = await _context.Good
-                    .Where(e => e.GoodId == request.GoodId)
+                    .Where(good => good.GoodId == request.GoodId)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 _context.Good.Remove(fined);
