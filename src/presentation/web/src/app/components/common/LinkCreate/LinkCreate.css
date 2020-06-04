@@ -1,0 +1,13 @@
+.link-create {
+    transition: .4s;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.17648;
+    border-radius: 18px;
+    padding: 8px 16px;
+}
+
+.link-create:hover {
+    cursor: pointer;
+    background-color: #0077ED;
+}

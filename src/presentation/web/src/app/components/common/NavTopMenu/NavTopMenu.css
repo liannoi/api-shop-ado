@@ -1,0 +1,28 @@
+@media (min-width: 992px) {
+    .navbar {
+        max-height: 44px;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.navbar-brand {
+    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-tap-highlight-color: transparent;
+    opacity: 0.7;
+}
+
+.navbar-brand:hover {
+    opacity: 1;
+}
+
+.navbar {
+    background-color: #333333;
+}
+
+.navbar a {
+    font-size: 14px;
+    line-height: 44px;
+}
