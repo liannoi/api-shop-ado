@@ -6,11 +6,11 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ShopAdo.System.Core.Application.Common.Interfaces;
 
-namespace ShopAdo.System.Core.Application.Storage.Goods.Queries.Get.AsList
+namespace ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodsList
 {
-    public class GetGoodsAsListQuery : IRequest<GoodsListViewModel>
+    public class GetGoodsListQuery : IRequest<GoodsListViewModel>
     {
-        public class GetGoodsAsListQueryHandler : IRequestHandler<GetGoodsAsListQuery, GoodsListViewModel>
+        public class GetGoodsAsListQueryHandler : IRequestHandler<GetGoodsListQuery, GoodsListViewModel>
         {
             private readonly IShopAdoContext _context;
             private readonly IMapper _mapper;
@@ -21,13 +21,13 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Queries.Get.AsList
                 _mapper = mapper;
             }
 
-            public async Task<GoodsListViewModel> Handle(GetGoodsAsListQuery request,
+            public async Task<GoodsListViewModel> Handle(GetGoodsListQuery request,
                 CancellationToken cancellationToken)
             {
                 return new GoodsListViewModel
                 {
                     Goods = await _context.Good
-                        .ProjectTo<GoodLookupDto>(_mapper.ConfigurationProvider)
+                        .ProjectTo<GoodDto>(_mapper.ConfigurationProvider)
                         .ToListAsync(cancellationToken)
                 };
             }

@@ -5,14 +5,15 @@ using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ShopAdo.System.Core.Application.Common.Interfaces;
+using ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodsList;
 
 namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Delete
 {
-    public class DeleteGoodCommand : IRequest<GoodLookupDto>
+    public class DeleteGoodCommand : IRequest<GoodDto>
     {
         public int GoodId { get; set; }
 
-        public class DeleteGoodCommandHandler : IRequestHandler<DeleteGoodCommand, GoodLookupDto>
+        public class DeleteGoodCommandHandler : IRequestHandler<DeleteGoodCommand, GoodDto>
         {
             private readonly IShopAdoContext _context;
             private readonly IMapper _mapper;
@@ -23,7 +24,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Delete
                 _mapper = mapper;
             }
 
-            public async Task<GoodLookupDto> Handle(DeleteGoodCommand request, CancellationToken cancellationToken)
+            public async Task<GoodDto> Handle(DeleteGoodCommand request, CancellationToken cancellationToken)
             {
                 var fined = await _context.Good
                     .Where(good => good.GoodId == request.GoodId)
@@ -32,7 +33,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Delete
                 _context.Good.Remove(fined);
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return _mapper.Map<GoodLookupDto>(fined);
+                return _mapper.Map<GoodDto>(fined);
             }
         }
     }

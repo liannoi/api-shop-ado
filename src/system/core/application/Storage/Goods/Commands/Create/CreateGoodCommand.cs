@@ -4,12 +4,13 @@ using AutoMapper;
 using MediatR;
 using ShopAdo.System.Core.Application.Common.Interfaces;
 using ShopAdo.System.Core.Application.Storage.Categories;
+using ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodsList;
 using ShopAdo.System.Core.Application.Storage.Manufacturers;
 using ShopAdo.System.Core.Domain.Entities;
 
 namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Create
 {
-    public class CreateGoodCommand : IRequest<GoodLookupDto>
+    public class CreateGoodCommand : IRequest<GoodDto>
     {
         public int GoodId { get; set; }
         public string GoodName { get; set; }
@@ -18,7 +19,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Create
         public decimal Price { get; set; }
         public decimal GoodCount { get; set; }
 
-        public class CreateGoodCommandHandler : IRequestHandler<CreateGoodCommand, GoodLookupDto>
+        public class CreateGoodCommandHandler : IRequestHandler<CreateGoodCommand, GoodDto>
         {
             private readonly IShopAdoContext _context;
             private readonly IMapper _mapper;
@@ -29,7 +30,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Create
                 _mapper = mapper;
             }
 
-            public async Task<GoodLookupDto> Handle(CreateGoodCommand request, CancellationToken cancellationToken)
+            public async Task<GoodDto> Handle(CreateGoodCommand request, CancellationToken cancellationToken)
             {
                 var result = await _context.Good.AddAsync(new Good
                 {
@@ -42,7 +43,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Commands.Create
 
                 await _context.SaveChangesAsync(cancellationToken);
 
-                return _mapper.Map<GoodLookupDto>(result.Entity);
+                return _mapper.Map<GoodDto>(result.Entity);
             }
         }
     }
