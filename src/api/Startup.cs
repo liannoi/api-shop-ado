@@ -60,7 +60,7 @@ namespace ShopAdo.WebAPI
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShopAdo API v1"));
 
-            app.UseCors(options => options.WithOrigins("http://localhost:4200")
+            app.UseCors(options => options.WithOrigins("http://localhost:3000", "http://192.168.1.103:3000")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
