@@ -20,7 +20,7 @@ export abstract class AbstractApiService<TModel, TListModel> implements ApiServi
     }
 
     public getById(id: number): Promise<TModel> {
-        throw new Error();
+        return fetch(`${this.endpoint}/${id}`).then(response => response.json());
     }
 
     public update(id: number, model: TModel): Promise<TModel> {

@@ -64,6 +64,8 @@ namespace ShopAdo.WebAPI
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
+            app.UseStaticFiles();
+
             app.UseRouting();
             app.UseEndpoints(endpoints =>
                 endpoints.MapControllerRoute("default", "{controller=Goods}/{action=GetAll}/{id?}"));

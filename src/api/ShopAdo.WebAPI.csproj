@@ -17,5 +17,28 @@
       <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="3.1.4" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\Files\137086ce-7773-46bf-9996-c15abd4a7867.jpg" />
+      <None Include="wwwroot\Files\318ba64b-e65f-4e05-adba-9c8b7e625b94.jpg" />
+      <None Include="wwwroot\Files\3932c7e0-f490-4083-b1dd-c0d9f725c4df.jpg" />
+      <None Include="wwwroot\Files\3b057dc5-af97-4a3b-b690-f8ff10d38d8d.jpg" />
+      <None Include="wwwroot\Files\4bacb0bd-35b1-4582-8b4c-615bd4b86ecb.jpg" />
+      <None Include="wwwroot\Files\4f953a5e-2094-4907-a251-96960b239d93.jpg" />
+      <None Include="wwwroot\Files\6b23e1eb-3510-4d4b-ad9c-daa31c368467.jpg" />
+      <None Include="wwwroot\Files\805b82c7-1b3e-40b1-8b85-c51dfeb09886.jpg" />
+      <None Include="wwwroot\Files\8f20d3f0-b022-4ae0-8f93-ac273bf4c063.jpg" />
+      <None Include="wwwroot\Files\ae2f56dd-80e2-4cd3-b9f3-eb296972266e.jpg" />
+      <None Include="wwwroot\Files\b4455fe3-b99a-4f5d-a16d-7fc0b2c4afc2.jpg" />
+      <None Include="wwwroot\Files\ca3363b2-4fc3-4cc6-8659-0c146b4f4337.jpg" />
+      <None Include="wwwroot\Files\ecc205ae-a152-4444-83a4-070a888ae998.jpg" />
+      <None Include="wwwroot\Files\f4f547c9-7cb5-4b4b-ad8c-c8baf15b3cbc.jpg" />
+      <None Include="wwwroot\Files\f8ca60a5-570e-4c1b-97e5-9980b0d519aa.jpg" />
+      <None Include="wwwroot\Files\NotPhoto.png" />
+    </ItemGroup>
     
 </Project>

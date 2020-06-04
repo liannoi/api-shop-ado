@@ -4,11 +4,12 @@ import {Route} from 'react-router-dom';
 
 import {Home} from './components/common/Home/Home';
 import {GoodsList} from './components/goods/GoodsList/GoodsList';
+import {GoodPhotos} from './components/goods/GoodPhotos/GoodPhotos';
 
 export const routes = [
     {
         path: '/goods/:id',
-        component: Home,
+        component: GoodPhotos,
     },
     {
         path: '/goods',
@@ -20,8 +21,7 @@ export const routes = [
     },
 ];
 
-// @ts-ignore
-export const AppRouting = route => {
+export const AppRouting = (route: any) => {
     return (
         <Route path={route.path} render={props => (<route.component {...props} routes={route.routes}/>)}/>
     );
