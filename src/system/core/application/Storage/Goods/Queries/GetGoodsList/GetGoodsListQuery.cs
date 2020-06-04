@@ -5,6 +5,7 @@ using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ShopAdo.System.Core.Application.Common.Interfaces;
+using ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodDetail;
 
 namespace ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodsList
 {
@@ -27,7 +28,7 @@ namespace ShopAdo.System.Core.Application.Storage.Goods.Queries.GetGoodsList
                 return new GoodsListViewModel
                 {
                     Goods = await _context.Good
-                        .ProjectTo<GoodDto>(_mapper.ConfigurationProvider)
+                        .ProjectTo<GoodDetailViewModel>(_mapper.ConfigurationProvider)
                         .ToListAsync(cancellationToken)
                 };
             }
